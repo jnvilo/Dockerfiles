@@ -13,5 +13,6 @@ RUN INSTALL_PKGS="python38 python38-devel python38-setuptools python38-pip" && \
     yum -y --setopt=tsflags=nodocs install $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     yum -y clean all --enablerepo='*'
- 
-USER 1001
+
+
+

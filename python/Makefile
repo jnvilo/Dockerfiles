@@ -2,7 +2,7 @@
 REGISTRY_URL=hub.lnxsystems.com
 PROJECT=library
 IMAGE_NAME=python
-TAG=centos8
+TAG=centos8-1
 
 .PHONY: build  all
 
