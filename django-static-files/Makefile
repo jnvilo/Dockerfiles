@@ -2,7 +2,7 @@
 REGISTRY_URL=hub.lnxsystems.com
 PROJECT=library
 IMAGE_NAME=django-static-files
-TAG=1.0.0
+TAG=1.0.1
 
 .PHONY: build  all run 
 
