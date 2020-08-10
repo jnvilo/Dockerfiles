@@ -1,0 +1,25 @@
+TER_VER=0.12.29
+GO_VER=1.14.7
+	
+terraform-provider-upcloud: terraform go terraform-provider-upcloud/README.md
+	export PATH=/usr/local/go/bin:${PATH} 
+	export GOBIN=/tmp 
+	cd terraform-provider-upcloud && go mod download && go install 
+
+terraform-provider-upcloud/README.md:
+	git clone https://github.com/UpCloudLtd/terraform-provider-upcloud.git
+	touch terraform-provider-upcloud/README.md
+
+terraform: terraform_${TER_VER}_linux_amd64.zip
+	unzip terraform_${TER_VER}_linux_amd64.zip
+
+terraform_${TER_VER}_linux_amd64.zip:
+	wget https://releases.hashicorp.com/terraform/${TER_VER}/terraform_${TER_VER}_linux_amd64.zip
+	rm -rf terraform
+go1.14.7.linux-amd64.tar.gz:
+	wget https://golang.org/dl/go${GO_VER}.linux-amd64.tar.gz
+
+go:  go1.14.7.linux-amd64.tar.gz
+	tar  -C /usr/local -xzf go${GO_VER}.linux-amd64.tar.gz
+		
+

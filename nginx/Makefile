@@ -18,7 +18,7 @@ tag:
 	docker tag ${REGISTRY_URL}/${PROJECT}/${IMAGE_NAME}:${TAG} ${REGISTRY_URL}/${PROJECT}/${IMAGE_NAME}:latest
  
 exec: build 
- 	docker run --rm  -it ${REGISTRY_URL}/${PROJECT}/${IMAGE_NAME}:latest
+ 	docker run --rm  -it ${REGISTRY_URL}/${PROJECT}/${IMAGE_NAME}:$TAG
 
 push:  
 	docker push ${REGISTRY_URL}/${PROJECT}/${IMAGE_NAME}:latest

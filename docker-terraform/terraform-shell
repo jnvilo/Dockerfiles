@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker run \
+	-v  ~/tffiles:/root/tffiles \
+	-it hub.lnxsystems.com/library/terraform:1.0.0 
